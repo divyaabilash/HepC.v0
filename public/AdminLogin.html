@@ -1,0 +1,31 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Contact List App</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+		<script type="text/javascript" src="main.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<h2 class="text-center">Admin Login</h2><br><br>
+			<form>
+				<div class="form-group">				
+					<label for="user">User Name</label><br>
+					<input type="text" class="form-control" id="user" ng-model="person.userName" placeholder="Enter User Name"><br><br>				
+					
+					<label for="pwd"> Password </label><br>
+					<input type="password" class="form-control" ng-model="person.password" id="pwd" placeholder="Password"></input><br><br>
+
+					<button type="submit" class="btn btn-primary" ng-click="onSignIn(person.userName)">Sign In</button>
+					<span>&nbsp;&nbsp;&nbsp;</span><button type="submit" class="btn btn-primary" ng-click="register()">Register</button>
+					<p>{{message}}</p>
+				</div>
+			</form>			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Admin Registration</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+		<script type="text/javascript" src="main.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h3 class="text-center">Admin Registration</h3><span><a href="#/home">Back<<</a></span><br><br>
+			<form class="form-inline">
+				<div class="form-group">
+
+					<label for="firstName">First Name</label><br>
+					<p><input type="text" class="form-control" id="firstName" ng-model="admin.fName" ng-blur="checkNameInDb(admin.fName)" placeholder="Enter Admin's first Name"><span>{{userExists}}</span></p><br>				
+					
+					<label for="lastName">Last Name</label><br>
+					<input type="text" class="form-control" id="lastName" ng-model="admin.lName" placeholder="Enter Admin's Last Name"><br><br>
+					
+					<label for="gender"> Sex </label><br>
+					
+					<select ng-model="admin.genderVal" id="gender">
+						<option value="M">Male</option>
+						<option value="F">Female</option>
+					</select><br><br>													
+					
+					<label for="contact"> Contact </label><br>
+					<input type="text" class="form-control" id="contact" ng-model="admin.cnct" placeholder="Enter Contact Number"><br><br>
+																		
+					<button type="submit" class="btn btn-primary" ng-click="onSubmit()">Submit</button>
+					
+					<p>{{message}}</p>
+				</div>
+			</form>
+			
+		</div>
+	</body>
+	
+</html>

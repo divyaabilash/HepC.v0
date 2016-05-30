@@ -1,0 +1,44 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Contact List App</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+		<script type="text/javascript" src="controllers/controller.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+		<p><h3>Existing Admins</h3></p>
+		<a href="#/home">Back<<</a>
+		<p> Search Criteria </p>
+		<p></p>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Sex</th>
+						<th>Contact</th>
+						<th>Edit</th>
+						<th>Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="admin in adminList">
+						<td>{{admin.fName}}</td>
+						<td>{{admin.lName}}</td>
+						<td>{{admin.genderVal}}</td>
+						<td>{{admin.cnct}}</td>
+						<td><button type="submit" ng-click="onEdit(admin.fName)">Edit</td>
+						<td><button type="submit" ng-click="onDelete(admin.fName)">Delete</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Patient Registration</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+		<script type="text/javascript" src="controllers/controller.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h3 class="text-center">Patient Registration</h3><span><a href="#/home">Back<<</a></span>
+			<form class="form-inline">
+				<div class="form-group">					
+					<label for="firstName">First Name</label><br>
+					<input type="text" class="form-control" id="firstName" ng-model="patient.fName" ng-blur="checkPatientNameInDb(patient.fName)" placeholder="Enter Patient's first Name">
+					{{message}}
+					<br><br>			
+					
+					<label for="lastName">Last Name</label><br>
+					<input type="text" class="form-control" id="lastName" ng-model="patient.lName" placeholder="Enter Patient's Last Name"><br><br>		
+					
+					<label for="dob"> DOB </label><br>
+					<input type="text" class="form-control" id="dob" ng-model="patient.dtob" placeholder="mm/dd/yyyy">
+					<br>
+					<br>
+					<label for="gender"> Sex </label><br>
+					<select ng-model="patient.genderVal" id="gender" class="form-control">
+						<option value="M">Male</option>
+						<option value="F">Female</option>
+					</select>
+					<br><br>
+					
+					<label for="race">Race / Ethnicity</label><br>					
+					<select ng-model="patient.selRace" id="race" class="form-control">
+						<option value="hispanic">Hispanic</option>
+						<option value="white">White</option>
+						<option value="blackAfrican">Black or African American</option>
+						<option value="asian">Asian</option>
+					</select>
+					<br><br>
+					
+					<label for="insurance">Insurance</label><br>					
+					<select ng-model="patient.insr" id="insurance" class="form-control">
+						<option value="sfhp">SFHP</option>
+						<option value="medicare">Medicare</option>
+						<option value="mediAnthem">Medi-Cal Anthem Blue Cross</option>
+						<option value="mediCal">MediCal</option>
+						<option value="hsf">HSF</option>
+						<option value="other">Other</option>
+					</select>
+					<br>
+					<br>
+
+					<label for="homeless">Homeless</label><br>					
+					<select ng-model="patient.isHomls" id="homeless" class="form-control">
+						<option value="Y">Yes</option>
+						<option value="N">No</option>
+					</select>
+					<br>
+					<br>
+
+					<label for="age"> Age </label><br>		
+					<input type="text" class="form-control" id="age" ng-model="patient.patAge" placeholder="Enter Age"><br><br>
+					
+					<label for="contact"> Contact </label><br>
+					<input type="text" class="form-control" id="contact" ng-model="patient.cnct" placeholder="Enter Contact Number">
+					<br>		
+					<br>
+											
+					<button type="submit" class="btn btn-primary" ng-click="onSubmit()">Submit</button>					
+				</div>
+			</form>
+			
+		</div>
+	</body>
+	
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Contact List App</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+		<script type="text/javascript" src="controllers/controller.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<h2>Existing Patients </h2> <span><a href="#/home">Back<<</a></span>
+			<h4> Search Criteria: </h4>
+			<p>
+			Name: <input type="text" placeholder="Search Patients" ng-model="searchPatient.fName"></input>
+			Sex: <input type="text" placeholder="Search Gender" ng-model="searchPatient.genderVal"></input>
+			Race: <input type="text" placeholder="Search Race" ng-model="searchPatient.selRace"></input><br><br>
+			Insurance: <input type="text" placeholder="Search Insurance" ng-model="searchPatient.insr"></input>
+			Homeless: <input type="text" placeholder="Search Homeless" ng-model="searchPatient.isHomls"></input>
+			</p>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>First Name</th>
+						<th>Sex</th>
+						<th>Race / Ethnicity</th>
+						<th>Insurance</th>
+						<th>Homeless</th>
+						<th>Edit</th>
+						<th>Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="patient in patientList | filter:searchPatient">
+						<td> {{patient.fName}}</td>
+						<td> {{patient.genderVal}}</td>
+						<td> {{patient.selRace}}</td>
+						<td> {{patient.insr}}</td>
+						<td> {{patient.isHomls}}</td>
+						<td><button type="submit" ng-click="editPatient(patient)">Edit</button></td>
+						<td><button type="submit" ng-click="deletePatient(patient.fName)">Delete</button></td>
+					</tr>
+				</tbody>
+			</table>
+			<label>Sex: </label><input type="text" ng-model="patient.genderVal"></input>
+			<label>Race: </label><input type="text" ng-model="patient.selRace"></input>
+			<label>Insurance: </label><input type="text" ng-model="patient.insr"></input>
+			<label>Homeless: </label><input type="text" ng-model="patient.isHomls"></input><br><br>
+			<button type="submit" ng-click="onSubmit(patient.fName)">Submit</button>
+		</div>
+	</body>
+
+</html>
